@@ -8,12 +8,35 @@
     <style>
         a {
             display: block;
-            height: 100px; 
-            width: 100px;
+            height: 175px;
+            width: 175px;
             background: #EFEFEF;
             margin: auto;
             text-decoration: none;
         }
+
+        .list {
+            width: 600px;
+            margin: auto;
+            text-align: center;
+            list-style-type: none;
+        }
+
+        .list li {
+            display: block;
+            margin: 0px;
+            padding: 0px;
+            float: left;
+            width: 33%;
+            margin-bottom: 10px;
+        }
+
+        .list li img {
+            margin: auto;
+            max-width: 100px;
+            display: block;
+        }
+
     </style>
 </head>
 
@@ -23,18 +46,15 @@
         style="display: block ;height: 50px;width: 300px ;background: #EFEFEF;margin: auto;text-decoration: none ;margin-bottom: 10px;text-align: center;">
         Slogan
     </div>
-    <table style="width:600px;margin: auto;text-align: center;">
-        <tbody>
-            <tr>
-                <td><a href="#">สมาชิกในทีม</a></td>
-                <td><a href="#">รวมโปรเจ็คทีม</a></td>
-                <td><a href="#">รวมภาพกิจกรรมในกลุ่ม</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">รวมรางวัลที่ได้</a></td>
-            </tr>
-        </tbody>
-    </table>
+
+
+    <ul class="list" >
+        <li > <a href="#">สมาชิกในทีม</a> </li>
+        <li> <a href="#">รวมโปรเจ็คทีม</a></li>
+        <li> <a href="#">รวมภาพกิจกรรมในกลุ่ม</a></li>
+        <li> <a href="#">รวมรางวัลที่ได้</a></li>
+
+    </ul>
 </body>
 
 </html>
