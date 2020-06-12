@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Form </title>
+</head>
+
+<body>
+    <form action="?" action="get">
+        <strong>Team : Spaghetti <br /> Name : วสุรัฐ ธรรมปัญญา</strong>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th align="center" colspan="2">Pizza Shop 2.0</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" /></td>
+                </tr>
+                <tr>
+                    <td>Pizza Topping </td>
+                    <td>
+                        <input type="radio" name="topping" value="superme" /> Superme <br />
+                        <input type="radio" name="topping" value="vegetarian" /> Vegetarian <br />
+                        <input type="radio" name="topping" value="hawaiian" /> Hawaiian <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pizza Sauce</td>
+                    <td>
+                        <select name="sauce">
+                            <option>Tomado</option>
+                            <option>Tomado</option>
+                            <option>Tomado</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Optional Extras </td>
+                    <td>
+                        <input type="checkbox" name="extra" />Extra Cheese
+                        <input type="checkbox" name="extra" />Gluten Free Base
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Delivery Instruction : <br />
+                        <textarea nmae="delivery" rows="3" style="width:98%"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Send my Order </button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </form>
+</body>
+
+</html>
