@@ -1,0 +1,22 @@
+
+ 
+้h1, h2 ,h3 ,h4 ,h5 ,h6 , nav {
+    font-family: "Kanit", sans-serif;
+}
+.section-main-profile{
+
+    font-family: "Kanit", sans-serif;
+    padding-top: 20px ;
+    padding-bottom: 20px ;
+
+}
+.profile-img{
+    border-radius: 200px ;
+    margin-bottom:  35px ;
+}
+
+.section-main-profile-msg-1{
+    font-size: 22px ;
+    font-family: "Kanit", sans-serif;
+}
+
