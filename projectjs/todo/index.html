@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        .line span {
+            text-decoration: line-through ;
+        }
+
+        .bg1 {
+            background-color: #FF0000 ;
+        }
+
+        .box1{
+            width: 300px;
+            margin:auto;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body style="padding:0;margin:0;">
+    <div class="bg1" >
+        <div class="box1" >
+            <input type="text" id="textinput" value="" />
+            <button id="btnAdd">Add</button>
+      </div>
+    </div>
+    <div class="bg2" >
+        <ul id="listMain">
+
+        </ul>
+    </div>
+
+    <script>
+        function remove(obj) {
+            obj.parentElement.remove();
+        }
+        function toggle(obj) {
+            
+            obj.parentElement.classList.toggle("line"); 
+
+        }
+        
+        document.getElementById("btnAdd").addEventListener("click", function () {
+            let val = document.getElementById("textinput").value;
+            if(val !== '' ){
+                let li = document.createElement("LI");
+                let span = document.createElement("SPAN");
+                span.innerHTML = val ; 
+                span.classList.add("item") ; 
+                span.onclick = function () {
+                    this.parentElement.classList.toggle("line"); 
+                } ; 
+
+                let a = document.createElement("A");
+                a.setAttribute('href', '#');
+                a.innerHTML = 'x' ; 
+                a.onclick = function (){
+                    this.parentElement.remove();
+                } ;
+
+                li.appendChild(span) ; 
+                li.appendChild(a) ; 
+
+                document.getElementById("listMain").appendChild(li);  
+
+                /*
+                let html = `
+                <li >
+                    <span class="item" onclick="toggle(event.target)"  >${val}</span>
+                    <a href="#" onclick="remove(event.target)" >x</a>
+                </li>
+                ` ;
+                */
+
+                //document.getElementById("listMain").innerHTML += html;
+                document.getElementById("textinput").value = '';
+            }
+        });
+ 
+
+    </script>
+</body>
+
+</html>
