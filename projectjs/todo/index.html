@@ -6,18 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <style>
-        .line span {
+        h3{
+            margin-top: 0 ;
+            margin-bottom: 0 ;
+            color: #FFFFFF ;
+        }
+        .line span.title {
             text-decoration: line-through ;
+        }
+        span.icon{
+            display: none ;
+            position:absolute;
+            top: 5px ;
+            left: 5px ;
+        }
+        .line span.icon {
+            display: inline ;
         }
 
         .bg1 {
+            font-size:  20px; ;
             background-color: #FF0000 ;
+            padding-top:20px; 
+            padding-bottom: 20px ;
         }
 
         .box1{
-            width: 300px;
+            width: 350px;
             margin:auto;
             text-align: center;
+        }
+        .box1 input{
+            font-size: 20px ;
+            padding: 10px ;
+        }
+
+        .box1 button{
+            font-size: 20px ;
+            padding: 10px ;
+        }
+        .bg2 ul{
+            padding: 0;
+            margin: 0 ;
+            width: 500px ;
+            margin: auto ;
+            list-style-type: none ;
+        }
+        .bg2 ul li{
+            padding: 10px ;
+            font-size: 20px ;
+            position: relative;
+        } 
+        .bg2 ul li .title{
+            margin-left : 35px ;
+        } 
+        .bg2 ul li .icon{
+        }
+        .bg2 ul li .btn-remove {
+            float: right ;
+            text-decoration: none ;
         }
     </style>
 
@@ -27,13 +74,14 @@
 <body style="padding:0;margin:0;">
     <div class="bg1" >
         <div class="box1" >
+            <h3>My To Do List</h3>
             <input type="text" id="textinput" value="" />
             <button id="btnAdd">Add</button>
       </div>
     </div>
     <div class="bg2" >
         <ul id="listMain">
-
+            
         </ul>
     </div>
 
@@ -51,36 +99,36 @@
             let val = document.getElementById("textinput").value;
             if(val !== '' ){
                 let li = document.createElement("LI");
-                let span = document.createElement("SPAN");
-                span.innerHTML = val ; 
-                span.classList.add("item") ; 
-                span.onclick = function () {
+                let title = document.createElement("SPAN");
+                let icon = document.createElement("SPAN");
+                title.innerHTML = val ; 
+                title.classList.add("title") ; 
+                title.onclick = function () {
                     this.parentElement.classList.toggle("line"); 
                 } ; 
 
+                icon.innerHTML = '&#10004;' ; 
+                icon.classList.add("icon") ; 
+                
+
                 let a = document.createElement("A");
                 a.setAttribute('href', '#');
-                a.innerHTML = 'x' ; 
+                a.innerHTML = '&#10006;' ; 
                 a.onclick = function (){
-                    this.parentElement.remove();
+                    if(confirm('Delete item Confirm'))
+                        this.parentElement.remove();
                 } ;
 
-                li.appendChild(span) ; 
+                a.classList.add("btn-remove") ; 
+
+                li.appendChild(icon) ; 
+                li.appendChild(title) ; 
                 li.appendChild(a) ; 
 
                 document.getElementById("listMain").appendChild(li);  
+ 
 
-                /*
-                let html = `
-                <li >
-                    <span class="item" onclick="toggle(event.target)"  >${val}</span>
-                    <a href="#" onclick="remove(event.target)" >x</a>
-                </li>
-                ` ;
-                */
-
-                //document.getElementById("listMain").innerHTML += html;
-                document.getElementById("textinput").value = '';
+                 document.getElementById("textinput").value = '';
             }
         });
  
